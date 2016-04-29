@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Experiment: Alert</title>
+
+	<link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+	<script src="../build/globals/alert.js"></script>
+</head>
+<body>
+	<h1>Alert</h1>
+	<script type="text/javascript">
+		window.alert = new metal.Alert({
+			body: 'This is an alert.'
+		});
+	</script>
+</body>
+</html>

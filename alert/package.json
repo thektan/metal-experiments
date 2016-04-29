@@ -1,0 +1,31 @@
+{
+	"name": "metal-experiment-alert",
+	"version": "0.0.0",
+	"description": "A simple modal component built with soy templates and without any custom js code",
+	"license": "BSD",
+	"repository": "https://github.com/metal/metal-examples/tree/master/soy-component/no-js",
+  "engines": {
+    "node": ">=0.12.0",
+    "npm": ">=3.0.0"
+  },
+  "files": [
+    "src",
+    "test"
+  ],
+	"scripts": {
+		"test": "gulp test"
+	},
+	"keywords": [
+		"metal"
+	],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "metal": "metal/metal.js#master",
+		"metal-component": "metal/metal-component#master",
+		"metal-soy": "metal/metal-soy#master"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+		"gulp-metal": "^1.0.0"
+  }
+}
