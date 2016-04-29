@@ -9,10 +9,25 @@
 	<script src="../build/globals/alert.js"></script>
 </head>
 <body>
-	<h1>Alert</h1>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div id="alert-container"></div>
+			</div>
+		</div>
+	</div>
+
 	<script type="text/javascript">
-		window.alert = new metal.Alert({
-			body: 'This is an alert.'
+		new metal.Alert({
+			body: 'This danger alert is dismissable!',
+			dismissable: true,
+			type: 'danger'
+		});
+
+		new metal.Alert({
+			body: 'This is an info alert and is not dismissable!',
+			dismissable: false,
+			type: 'info'
 		});
 	</script>
 </body>

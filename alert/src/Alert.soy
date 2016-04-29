@@ -3,11 +3,13 @@
 /**
  * This renders the main content of the `Alert` component.
  * @param body
+ * @param dismissable
+ * @param type
  */
 {template .render}
-	<div class="alert alert-success">
+	<div class="alert {if $type}alert-{$type}{/if}">
 		{$body}
 
-		<button type="button" class="close" data-onclick="hide"><span aria-hidden="true">×</span></button>
+		{if $dismissable}<button type="button" class="close" data-onclick="hide"><span aria-hidden="true">×</span></button>{/if}
 	</div>
 {/template}

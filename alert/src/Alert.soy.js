@@ -41,17 +41,19 @@ var iattr = IncrementalDom.attr;
  */
 function $render(opt_data, opt_ignored, opt_ijData) {
   ie_open('div', null, null,
-      'class', 'alert alert-success');
+      'class', 'alert ' + ((opt_data.type) ? 'alert-' + opt_data.type : ''));
     itext((goog.asserts.assert((opt_data.body) != null), opt_data.body));
-    ie_open('button', null, null,
-        'type', 'button',
-        'class', 'close',
-        'data-onclick', 'hide');
-      ie_open('span', null, null,
-          'aria-hidden', 'true');
-        itext('\u00D7');
-      ie_close('span');
-    ie_close('button');
+    if (opt_data.dismissable) {
+      ie_open('button', null, null,
+          'type', 'button',
+          'class', 'close',
+          'data-onclick', 'hide');
+        ie_open('span', null, null,
+            'aria-hidden', 'true');
+          itext('\u00D7');
+        ie_close('span');
+      ie_close('button');
+    }
   ie_close('div');
 }
 exports.render = $render;
@@ -59,8 +61,8 @@ if (goog.DEBUG) {
   $render.soyTemplateName = 'Alert.render';
 }
 
-exports.render.params = ["body"];
-exports.render.types = {"body":"any"};
+exports.render.params = ["body","dismissable","type"];
+exports.render.types = {"body":"any","dismissable":"any","type":"any"};
 templates = exports;
 return exports;
 
