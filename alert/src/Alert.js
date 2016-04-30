@@ -11,16 +11,6 @@ import Soy from 'metal-soy';
 
 class Alert extends Component {
 	/**
-	 * Adds additional function to the alert constructor.
-	 * @param config
-	 */
-	constructor(config) {
-		super(config);
-
-		dom.append(document.getElementById('alert-container'), this.element);
-	}
-
-	/**
 	 * Dismisses the alert.
 	 * @param  {!Event} event optional
 	 */
@@ -55,7 +45,8 @@ Alert.STATE = {
 	 * @type {string}
 	 */
 	body: {
-		validator: core.isString
+		validator: core.isString,
+		writeOnce: true
 	},
 
 	/**
@@ -63,7 +54,8 @@ Alert.STATE = {
 	 * @type {boolean}
 	 */
 	dismissable: {
-		validator: core.isBoolean
+		validator: core.isBoolean,
+		value: true
 	},
 
 	/**

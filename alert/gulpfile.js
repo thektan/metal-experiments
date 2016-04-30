@@ -3,8 +3,8 @@
 var metal = require('gulp-metal');
 
 metal.registerTasks({
-	bundleCssFileName: 'modal.css',
-	bundleFileName: 'alert.js',
+	bundleCssFileName: 'alertbox.css',
+	bundleFileName: 'alertbox.js',
 	mainBuildJsTasks: ['build:globals'],
 	moduleName: 'metal-experiment-alert'
 });

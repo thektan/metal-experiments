@@ -1,0 +1,17 @@
+{namespace AlertBox}
+
+/**
+ * Container for alerts.
+ * @param alerts
+ */
+{template .render}
+	<div class="alert-container">
+		{foreach $alert in $alerts}
+			{call Alert.render}
+				{param body: $alert.body /}
+				{param dismissable: $alert.dismissable /}
+				{param type: $alert.type /}
+			{/call}
+		{/foreach}
+	</div>
+{/template}
