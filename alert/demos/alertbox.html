@@ -9,6 +9,9 @@
 
 	<script src="../build/globals/alertbox.js"></script>
 
+	<!--  Scripts for demo purposes -->
+	<script src="js/chance.min.js"></script>
+
 	<style>
 		.btn-generate-alert {
 			margin: 20px;
@@ -24,14 +27,20 @@
 		 */
 		var alertBox = new metal.AlertBox();
 
+		// Initialize chance for random generation.
+		var chance = new Chance();
+
+		// Possible types.
+		var alertTypes = ["success", "info", "warning", "danger"];
+
 		/**
 		 * Creates a new alert.
 		 */
 		function generateAlert() {
 			alertBox.alerts = alertBox.alerts.concat([
 				{
-					body: 'New alert',
-					type: 'info'
+					body: chance.sentence(),
+					type: alertTypes[Math.round(Math.random() * 3)]
 				}
 			]);
 		};
