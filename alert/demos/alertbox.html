@@ -8,21 +8,33 @@
 	<link rel="stylesheet" href="../build/alertbox.css">
 
 	<script src="../build/globals/alertbox.js"></script>
+
+	<style>
+		.btn-generate-alert {
+			margin: 20px;
+		}
+	</style>
 </head>
 <body>
+	<button type="button" class="btn btn-info btn-lg btn-generate-alert" onclick="generateAlert();">Generate Alert</button>
+
 	<script type="text/javascript">
-		new metal.AlertBox({
-			alerts: [
+		/**
+		 * Creates a new empty alert box.
+		 */
+		var alertBox = new metal.AlertBox();
+
+		/**
+		 * Creates a new alert.
+		 */
+		function generateAlert() {
+			alertBox.alerts = alertBox.alerts.concat([
 				{
-					body: 'Success alert',
-					type: 'success'
-				},
-				{
-					body: 'Danger alert',
-					type: 'danger'
+					body: 'New alert',
+					type: 'info'
 				}
-			]
-		});
+			]);
+		};
 	</script>
 </body>
 </html>
