@@ -10,4 +10,10 @@ class AlertBox extends Component {
 
 Soy.register(AlertBox, templates);
 
+AlertBox.STATE = {
+	alerts: {
+		value: []
+	}
+}
+
 export default AlertBox;
